@@ -28,8 +28,9 @@ header h1 {
 
 .intro {
     text-align: center;
-    padding: 30px 0;
+    padding: 30px;
     border-bottom: double 7px #2d3945;
+    background-color: lightgrey;
 }
 
 .intro h2 {
@@ -41,7 +42,7 @@ header h1 {
 
 .intro p {
     font-size: 14px;
-    color: #aaafb4;
+    color: grey;
     font-weight: 300;
     line-height: 1.5em;
 }
@@ -70,6 +71,12 @@ form fieldset:first-child {
     padding-bottom: 30px;
     margin-bottom: 0;
     border-bottom: 1.5px solid #2d3945; 
+}
+
+textarea::placeholder {
+    text-align: left;
+    font-size: 12px;
+    color: #bec2c5;
 }
 
 ::placeholder {
@@ -109,7 +116,7 @@ form fieldset select option {
 }
 
 input[id="zip"] {
-    width: 50%;
+    width: 250px;
     margin-bottom: 0;
 }
 
@@ -147,11 +154,59 @@ button {
     
 }
 
-
-
-
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[id="zipcode"]:focus,
+textarea[id="topics"]:focus,
+select[id="state"]:focus {
+  outline: none;
+  border: 2px solid;
+  background-color: #FFF8DC;
+  transition: all .3s;
+  border-color: blue;
+}
 
 
 @media (min-width: 768px) {
-    
+
+    .container {
+        padding: 0;
+        max-width: 768px;
+        margin: 0 auto;
+    }
+
+    form fieldset {
+        border: none;
+        margin: 50px 0 30px 0;
+    }
+
+    legend {
+        margin-bottom: 35px;
+    }
+
+    .form-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 30px;
+        
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select[id="state"] {
+      width: 600px;
+      margin: 0;
+    }
+
+    input[id="zip"] {
+        width: 30%;
+      }
+
+    .form-box label {
+    width: 168px;
+    margin: 0;
+    }
 }
